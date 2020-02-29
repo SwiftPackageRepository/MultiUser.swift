@@ -1,0 +1,34 @@
+# Only create a build job IF there is no tag in the commit
+if: tag IS blank
+# Only create a build job IF the branch is 'master'
+branches:
+  only:
+  - master
+# Set environment variables for the build job  
+env:
+  global:
+  # PACKAGE_VERSION will be used by travis to create the Github release tag
+  - PACKAGE_VERSION=0.0.1
+jobs:
+  include:
+  # The first stage will run all unit tests using Ubuntu
+  - stage: Test
+    os:
+      - osx
+    language: objective-c
+    osx_image: xcode11.2
+    install:
+      - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
+    script:
+      - swift package update
+      - swift build
+      - swift test
+  # The final stage will create a new Github tag using the version specified above, this will create
+  # a new release in Github
+  - stage: Set tag
+    script:
+    - git config --global user.email "builds@travis-ci.com"
+    - git config --global user.name "Travis CI"
+    - git tag $PACKAGE_VERSION
+   # - git push --quiet https://$GH_TOKEN@github.com/smuellner/MultiUser-for-swift --tag > /dev/null 2>&1
+
