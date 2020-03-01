@@ -1,0 +1,20 @@
+engines:
+  tailor:
+    enabled: true
+    checks:
+      forced-type-cast:
+        enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+       - swift
+fixme:
+    enabled: true
+ratings:
+  paths: 
+  - "**.swift"
+exclude_paths:
+- LICENSE
+- README.md
+- MultiUser.podspec
