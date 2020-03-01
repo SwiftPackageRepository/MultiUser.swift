@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MultiUser'
-  s.version          = '1.0.0'
+  s.version          = '0.0.1'
   s.summary          = 'MultiUser handling for applications.'
   s.homepage         = 'https://github.com/smuellner/MultiUser-for-swift'
   s.license          = { type: 'Apache', file: 'LICENSE' }
