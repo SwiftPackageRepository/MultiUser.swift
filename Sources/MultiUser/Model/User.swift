@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User : Codable {
+public struct User : Codable {
     private var uuid:UUID
 
     var username: String?
@@ -19,11 +19,11 @@ struct User : Codable {
     var icon: Data?
     var data: [Data]?
 
-    init() {
+    public init() {
         self.uuid = UUID()
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.uuid = try values.decode(UUID.self, forKey: .uuid)
         self.username = try values.decode(String.self, forKey: .username)
@@ -36,7 +36,7 @@ struct User : Codable {
         self.data = try values.decode([Data].self, forKey: .data)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.uuid, forKey: .uuid)
         try container.encode(self.username, forKey: .username)
@@ -49,7 +49,7 @@ struct User : Codable {
         try container.encode(self.data, forKey: .data)
     }
 
-    var id: UUID {
+    public var id: UUID {
         get {
             return self.uuid
         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserService : UserServiceProtocol {
+public class UserService : UserServiceProtocol {
 
     private var userRepository :UserRepositoryProtocol
 
@@ -19,32 +19,32 @@ class UserService : UserServiceProtocol {
         self.userRepository = PropertyListUserRepository()
     }
 
-    func create() -> User {
+    public func create() -> User {
         let user = User()
         self.userRepository.save(user: user)
         return user
     }
 
-    func save(user: User) {
+    public func save(user: User) {
         self.userRepository.save(user: user)
     }
 
-    func delete(user: User) {
+    public func delete(user: User) {
         if(current?.id == user.id) {
             current = nil
         }
         self.userRepository.delete(user: user)
     }
 
-    var all: [User] {
+    public var all: [User] {
         return self.userRepository.all
     }
 
-    var hasUsers: Bool {
+    public var hasUsers: Bool {
         return self.all.count > 0
     }
 
-    var current: User? {
+    public var current: User? {
         get {
             return self.userRepository.current
         }

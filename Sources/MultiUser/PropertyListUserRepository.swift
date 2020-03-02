@@ -7,9 +7,9 @@
 
 import Foundation
 
-class PropertyListUserRepository : UserRepositoryProtocol {
+public class PropertyListUserRepository : UserRepositoryProtocol {
 
-    init() {
+    public init() {
         do
         {
             try FileManager.default.createDirectory(atPath: usersDirectory.path, withIntermediateDirectories: true, attributes: nil)
@@ -20,7 +20,7 @@ class PropertyListUserRepository : UserRepositoryProtocol {
         }
     }
 
-    func save(user: User) {
+    public func save(user: User) {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         do {
@@ -34,7 +34,7 @@ class PropertyListUserRepository : UserRepositoryProtocol {
         }
     }
 
-    func delete(user: User) {
+    public func delete(user: User) {
         do
         {
             guard let url = self.getURL(user: user) else {
@@ -48,7 +48,7 @@ class PropertyListUserRepository : UserRepositoryProtocol {
         }
     }
 
-    var all: [User] {
+    public var all: [User] {
         var users = [User]()
         for userURL in self.userURLs {
             guard let user = self.read(url: userURL) else {
@@ -59,7 +59,7 @@ class PropertyListUserRepository : UserRepositoryProtocol {
         return users
     }
 
-    var current: User? {
+    public var current: User? {
         get {
             guard let currentUserUUID = self.userIndex?.currentUserUUID else {
                 return nil

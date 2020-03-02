@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct UserIndex : Codable {
+public struct UserIndex : Codable {
     var currentUserUUID: UUID?
 
-    init() {
+    public init() {
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.currentUserUUID = try values.decode(UUID.self, forKey: .currentUserUUID)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.currentUserUUID, forKey: .currentUserUUID)
     }
