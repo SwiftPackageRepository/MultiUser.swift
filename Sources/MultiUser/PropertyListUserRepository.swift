@@ -78,7 +78,7 @@ public class PropertyListUserRepository : UserRepositoryProtocol {
 
     private func read(userUUID: UUID) -> User? {
         let userId = userUUID.uuidString
-        let url = self.usersDirectory.appendingPathComponent(userId, isDirectory: false)
+        let url = self.usersDirectory.appendingPathComponent(userId, isDirectory: false).appendingPathExtension("plist")
         return self.read(url: url)
     }
 
@@ -114,7 +114,7 @@ public class PropertyListUserRepository : UserRepositoryProtocol {
 
     private func getURL(user: User) -> URL? {
         let userId = user.id
-        return self.usersDirectory.appendingPathComponent(userId.uuidString, isDirectory: false)
+        return self.usersDirectory.appendingPathComponent(userId.uuidString, isDirectory: false).appendingPathExtension("plist")
     }
 
     private var usersIndexURL :URL {
