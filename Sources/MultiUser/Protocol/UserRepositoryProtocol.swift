@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UserRepositoryProtocol {
+public protocol UserRepositoryProtocol {
     func save(user: User)
     func delete(user: User)
     var all: [User] { get }

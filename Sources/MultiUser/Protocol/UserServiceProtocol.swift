@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UserServiceProtocol {
+public protocol UserServiceProtocol {
     func create() -> User
     func save(user: User)
     func delete(user: User)
