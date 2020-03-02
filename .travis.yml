@@ -29,6 +29,6 @@ jobs:
     script:
     - git config --global user.email "builds@travis-ci.com"
     - git config --global user.name "Travis CI"
-    - git tag $PACKAGE_VERSION
+   # - git tag $PACKAGE_VERSION
    # - git push --quiet https://$GH_TOKEN@github.com/smuellner/MultiUser-for-swift --tag > /dev/null 2>&1
 
