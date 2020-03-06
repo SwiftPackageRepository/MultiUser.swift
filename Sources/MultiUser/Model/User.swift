@@ -10,14 +10,14 @@ import Foundation
 public struct User : Codable {
     private var uuid:UUID
 
-    var username: String?
-    var firstname: String?
-    var lastname: String?
-    var birthday: Date?
-    var emails: [String]?
-    var attributes: [String: String]?
-    var icon: Data?
-    var data: [Data]?
+    public var username: String?
+    public var firstname: String?
+    public var lastname: String?
+    public var birthday: Date?
+    public var emails: [String]?
+    public var attributes: [String: String]?
+    public var icon: Data?
+    public var data: [Data]?
 
     public init() {
         self.uuid = UUID()
