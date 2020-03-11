@@ -5,7 +5,8 @@ MultiUser is **created and maintaned with ❥** by Sascha Muellner.
 ---
 
 [![Travis CI](https://travis-ci.org/smuellner/MultiUser-for-swift.svg?branch=master)](https://travis-ci.org/smuellner/MultiUser-for-swift)
-[![Maintainability](https://api.codeclimate.com/v1/badges/960d3ef98a6e144689c5/maintainability)](https://codeclimate.com/github/smuellner/MultiUser-for-swift/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/960d3ef98a6e144689c5/maintainability)](https://codeclimate.com/github/smuellner/MultiUser-for-Swift/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/960d3ef98a6e144689c5/test_coverage)](https://codeclimate.com/github/smuellner/MultiUser-for-Swift/test_coverage)
 [![Platforms](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-lightgrey.svg)](https://smuellner.github.io/MultiUser-for-swift)
 [![Version](https://img.shields.io/cocoapods/v/MultiUser.svg?style=flat)](https://github.com/smuellner/MultiUser-for-swift/releases/latest)
 [![License](https://img.shields.io/cocoapods/l/MultiUser.svg?style=flat)](https://cocoapods.org/pods/MultiUser)
