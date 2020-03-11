@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class PropertyListUserRepository : UserRepositoryProtocol {
+public class PropertyListUserRepository: UserRepositoryProtocol {
 
     public init() {
         do

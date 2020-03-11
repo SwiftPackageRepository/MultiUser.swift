@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-public struct Address : Codable {
+public struct Address: Codable {
 
     public var label: String?
     public var street: String?

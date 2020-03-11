@@ -7,8 +7,8 @@
 
 import Foundation
 
-public struct Capabilities : Codable {
-
+public struct Capabilities: Codable {
+    
     public var nativeLanguage: String?
     public var languages: [String]?
 

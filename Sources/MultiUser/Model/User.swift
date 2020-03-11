@@ -8,7 +8,7 @@
 import Foundation
 import CoreImage
 
-public struct User : Codable {
+public struct User: Codable {
     private var uuid: UUID
 
     public var username: String?

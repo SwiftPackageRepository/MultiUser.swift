@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Phone : Codable {
+public struct Phone: Codable {
 
     public var label: String?
     public var phone: String?

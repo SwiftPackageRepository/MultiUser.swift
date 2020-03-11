@@ -1,6 +1,6 @@
 //
 //  UserServiceProtocol.swift
-//  
+//
 //
 //  Created by Sascha Müllner on 29.02.20.
 //

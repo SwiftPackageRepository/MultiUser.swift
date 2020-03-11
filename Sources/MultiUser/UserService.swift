@@ -7,11 +7,11 @@
 
 import Foundation
 
-public class UserService : UserServiceProtocol {
+public class UserService: UserServiceProtocol {
 
-    private var userRepository :UserRepositoryProtocol
+    private var userRepository: UserRepositoryProtocol
 
-    public init(userRepository :UserRepositoryProtocol) {
+    public init(userRepository: UserRepositoryProtocol) {
         self.userRepository = userRepository
     }
 

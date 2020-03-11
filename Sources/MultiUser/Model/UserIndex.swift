@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct UserIndex : Codable {
+public struct UserIndex: Codable {
     var currentUserUUID: UUID?
 
     public init() {
     }
-    
+
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.currentUserUUID = try values.decode(UUID.self, forKey: .currentUserUUID)
