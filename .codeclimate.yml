@@ -9,6 +9,9 @@ engines:
     config:
       languages:
        - swift
+plugins:
+  swiftlint:
+    enabled: true
 fixme:
     enabled: true
 ratings:
