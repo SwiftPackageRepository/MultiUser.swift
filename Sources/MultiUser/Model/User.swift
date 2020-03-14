@@ -34,12 +34,13 @@ public struct User: Codable {
         self.firstname = try values.decodeIfPresent(String.self, forKey: .firstname)
         self.lastname = try values.decodeIfPresent(String.self, forKey: .lastname)
         self.birthday = try values.decodeIfPresent(Date.self, forKey: .birthday)
-        self.emails = try values.decodeIfPresent([EMail].self, forKey: .emails)
-        self.phones = try values.decodeIfPresent([Phone].self, forKey: .phones)
-        self.addresses = try values.decodeIfPresent([Address].self, forKey: .addresses)
-        self.attributes = try values.decodeIfPresent([String: String].self, forKey: .attributes)
+        self.emails = try values.decodeIfPresent([EMail].self, forKey: .emails) ?? [EMail]()
+        self.phones = try values.decodeIfPresent([Phone].self, forKey: .phones) ?? [Phone]()
+        self.addresses = try values.decodeIfPresent([Address].self, forKey: .addresses) ?? [Address]()
+        self.capabilities = try values.decodeIfPresent(Capabilities.self, forKey: .capabilities)
+        self.attributes = try values.decodeIfPresent([String: String].self, forKey: .attributes) ?? [String: String]()
         self.icon = try values.decodeIfPresent(Data.self, forKey: .icon)
-        self.data = try values.decodeIfPresent([Data].self, forKey: .data)
+        self.data = try values.decodeIfPresent([Data].self, forKey: .data) ?? [Data]()
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -52,6 +53,7 @@ public struct User: Codable {
         try container.encodeIfPresent(self.emails, forKey: .emails)
         try container.encodeIfPresent(self.phones, forKey: .phones)
         try container.encodeIfPresent(self.addresses, forKey: .addresses)
+        try container.encodeIfPresent(self.capabilities, forKey: .capabilities)
         try container.encodeIfPresent(self.attributes, forKey: .attributes)
         try container.encodeIfPresent(self.icon, forKey: .icon)
         try container.encodeIfPresent(self.data, forKey: .data)
@@ -64,6 +66,6 @@ public struct User: Codable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case uuid, username, firstname, lastname, birthday, emails, phones, addresses, attributes, icon, data
+        case uuid, username, firstname, lastname, birthday, emails, phones, addresses, capabilities, attributes, icon, data
     }
 }

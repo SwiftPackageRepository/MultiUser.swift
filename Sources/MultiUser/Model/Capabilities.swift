@@ -15,7 +15,7 @@ public struct Capabilities: Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.nativeLanguage = try values.decodeIfPresent(String.self, forKey: .nativeLanguage)
-        self.languages = try values.decodeIfPresent([String].self, forKey: .languages)
+        self.languages = try values.decodeIfPresent([String].self, forKey: .languages) ?? [String]()
     }
 
     public func encode(to encoder: Encoder) throws {
