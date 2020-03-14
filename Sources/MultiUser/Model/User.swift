@@ -15,13 +15,13 @@ public struct User: Codable {
     public var firstname: String?
     public var lastname: String?
     public var birthday: Date?
-    public var emails: [EMail]?
-    public var phones: [Phone]?
-    public var addresses: [Address]?
-    public var capabilities: Capabilities?
-    public var attributes: [String: String]?
+    public var emails: [EMail] = [EMail]()
+    public var phones: [Phone] = [Phone]()
+    public var addresses: [Address] = [Address]()
+    public var capabilities: Capabilities = Capabilities()
+    public var attributes: [String: String] = [String: String]()
     public var icon: Data?
-    public var data: [Data]?
+    public var data: [Data] = [Data]()
 
     public init() {
         self.uuid = UUID()
@@ -37,7 +37,7 @@ public struct User: Codable {
         self.emails = try values.decodeIfPresent([EMail].self, forKey: .emails) ?? [EMail]()
         self.phones = try values.decodeIfPresent([Phone].self, forKey: .phones) ?? [Phone]()
         self.addresses = try values.decodeIfPresent([Address].self, forKey: .addresses) ?? [Address]()
-        self.capabilities = try values.decodeIfPresent(Capabilities.self, forKey: .capabilities)
+        self.capabilities = try values.decodeIfPresent(Capabilities.self, forKey: .capabilities) ?? Capabilities()
         self.attributes = try values.decodeIfPresent([String: String].self, forKey: .attributes) ?? [String: String]()
         self.icon = try values.decodeIfPresent(Data.self, forKey: .icon)
         self.data = try values.decodeIfPresent([Data].self, forKey: .data) ?? [Data]()

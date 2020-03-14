@@ -18,6 +18,8 @@ public struct Address: Codable {
     public var latitude: CLLocationDegrees?
     public var longitude: CLLocationDegrees?
 
+    public init() {
+    }
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)

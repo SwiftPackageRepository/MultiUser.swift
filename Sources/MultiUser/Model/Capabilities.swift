@@ -10,8 +10,11 @@ import Foundation
 public struct Capabilities: Codable {
     
     public var nativeLanguage: String?
-    public var languages: [String]?
+    public var languages: [String] = [String]()
 
+    internal init() {
+    }
+    
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.nativeLanguage = try values.decodeIfPresent(String.self, forKey: .nativeLanguage)

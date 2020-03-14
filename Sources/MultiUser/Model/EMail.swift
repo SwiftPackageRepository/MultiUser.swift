@@ -12,6 +12,9 @@ public struct EMail: Codable {
     public var label: String?
     public var email: String?
 
+    public init() {
+    }
+    
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.label = try values.decodeIfPresent(String.self, forKey: .label)
